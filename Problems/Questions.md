@@ -1,109 +1,219 @@
-# Scalable Computing: 10 Introductory and Educational Problems in C++
+# **Scalable Computing: 20 Problems on Data Structures, Algorithms, and Multithreading in C++**
 
-## **1. Multi-threaded Summation**
+## **1. Concurrent Linked List**
 ### **Problem Statement**
-Write a C++ program that computes the sum of numbers from **1 to 1,000,000** using multiple threads. Divide the work equally among **4 threads**.
+Implement a **thread-safe singly linked list** that allows concurrent insertions and deletions using `std::mutex`.
 
 ### **Prerequisites & Knowledge**
-- Basics of **multithreading** in C++ (`std::thread`)
-- **Mutex** and race conditions
+- Basics of **linked list** operations
+- Understanding **mutex locks** for thread safety
+- Avoiding **deadlocks** during concurrent modification
+
+---
+
+## **2. Thread-Safe Stack Implementation**
+### **Problem Statement**
+Create a **thread-safe stack** using `std::mutex`. Implement `push`, `pop`, and `top` operations with proper synchronization.
+
+### **Prerequisites & Knowledge**
+- Stack operations (LIFO)
 - Thread synchronization using `std::mutex`
+- Exception safety in concurrent environments
 
 ---
 
-## **2. Parallel Matrix Multiplication**
+## **3. Multi-threaded Binary Search Tree (BST)**
 ### **Problem Statement**
-Implement a **parallel matrix multiplication** program using `std::thread`. The program should take two **NxN matrices** and compute their product in a multi-threaded fashion.
+Implement a **concurrent binary search tree** that supports insertions and searches from multiple threads simultaneously.
 
 ### **Prerequisites & Knowledge**
-- Understanding of **matrix multiplication**
-- Multi-threading with `std::thread`
-- Using `std::vector` for dynamic memory handling
+- Basics of **BST** operations
+- Protecting critical sections with **mutexes**
+- Handling concurrent read-write scenarios
 
 ---
 
-## **3. OpenMP Parallel Loop Optimization**
+## **4. Parallel Breadth-First Search (BFS)**
 ### **Problem Statement**
-Use **OpenMP** to parallelize a for-loop that sums an array of **10,000,000** elements.
+Implement a **parallel BFS algorithm** for traversing a graph using `std::thread`.
 
 ### **Prerequisites & Knowledge**
-- Basics of **OpenMP** (`#pragma omp parallel for`)
-- Understanding of **loop parallelization**
-- Using `reduction(+:sum)` to handle summation safely
+- Understanding graph traversal algorithms
+- Synchronizing shared data across threads
+- Avoiding **race conditions** during node visitation
 
 ---
 
-## **4. Multi-threaded Web Server**
+## **5. Multi-threaded Priority Queue**
 ### **Problem Statement**
-Implement a **basic web server** in C++ that can handle multiple connections concurrently using **threads**.
+Implement a **thread-safe priority queue** using `std::priority_queue` and `std::mutex`.
 
 ### **Prerequisites & Knowledge**
-- Understanding of **sockets in C++**
-- Using `std::thread` to handle multiple connections
-- Understanding **HTTP request-response model**
+- Priority queue fundamentals
+- Lock management for concurrent access
+- Efficient insertion and deletion operations
 
 ---
 
-## **5. Distributed Summation with MPI**
+## **6. Parallel Quick Sort Algorithm**
 ### **Problem Statement**
-Use **MPI (Message Passing Interface)** to distribute the sum of **1 to 100,000** across multiple processes.
+Write a **parallel quicksort algorithm** that spawns new threads for sorting partitions concurrently.
 
 ### **Prerequisites & Knowledge**
-- Basics of **MPI (`MPI_Init`, `MPI_Comm_rank`, `MPI_Comm_size`)**
-- Message passing and **inter-process communication (IPC)**
-- Using `MPI_Reduce` to gather results
+- Quick sort divide-and-conquer technique
+- Dynamic thread management using `std::thread`
+- Avoiding excessive thread creation
 
 ---
 
-## **6. Load Balancing with Thread Pool**
+## **7. Concurrent Hash Map**
 ### **Problem Statement**
-Implement a **thread pool** that efficiently processes a queue of computational tasks.
+Create a **thread-safe hash map** where insertions, deletions, and searches can happen concurrently using fine-grained locks.
 
 ### **Prerequisites & Knowledge**
-- Understanding **thread pooling** and its advantages
-- Using `std::condition_variable` and `std::mutex` for thread synchronization
-- Implementing a **task queue** using `std::queue`
+- Basics of **hash maps** and collision handling
+- **Fine-grained locking** techniques for better performance
+- Avoiding data races
 
 ---
 
-## **7. Parallel Sorting with Merge Sort**
+## **8. Multi-threaded Fibonacci Calculation**
 ### **Problem Statement**
-Implement a **parallel merge sort** using `std::thread` to speed up sorting of a large array.
+Compute the **n-th Fibonacci number** using multiple threads to optimize recursive calls.
 
 ### **Prerequisites & Knowledge**
-- Understanding **merge sort algorithm**
-- Implementing **divide-and-conquer parallelization**
-- Efficient thread spawning and management
+- Recursive algorithm optimization
+- Memoization techniques with thread safety
+- Avoiding redundant thread creation
 
 ---
 
-## **8. Shared Memory Parallel Processing**
+## **9. Parallel DFS (Depth-First Search)**
 ### **Problem Statement**
-Use **shared memory parallel processing** to sum a large dataset across multiple threads using `std::atomic` to avoid race conditions.
+Implement a **parallel depth-first search** for graphs, using threads for each branch of exploration.
 
 ### **Prerequisites & Knowledge**
-- Understanding **shared memory model**
-- Using **atomic operations** (`std::atomic`) for thread safety
-- Using `std::mutex` vs `std::atomic` for performance optimization
+- DFS traversal fundamentals
+- Managing recursive calls across threads
+- Avoiding deadlocks and race conditions
 
 ---
 
-## **9. Asynchronous Task Execution**
+## **10. Multi-threaded Sorting of Linked List**
 ### **Problem Statement**
-Write a C++ program that performs **asynchronous tasks** using `std::async`. The program should fetch multiple files concurrently and process them independently.
+Implement a **parallel merge sort** specifically designed for a **linked list**.
 
 ### **Prerequisites & Knowledge**
-- Understanding **asynchronous programming** in C++
-- Using `std::async` for launching background tasks
-- Handling **future objects (`std::future`)**
+- Merge sort algorithm for linked lists
+- Efficient splitting of linked lists for parallel processing
+- Synchronizing list merging with mutexes
 
 ---
 
-## **10. Scalable Message Queue System**
+## **11. Producer-Consumer Problem Using Bounded Buffer**
 ### **Problem Statement**
-Implement a simple **producer-consumer** model where multiple producer threads generate messages and multiple consumer threads process them using a **thread-safe queue**.
+Solve the **producer-consumer problem** with a fixed-size circular buffer using `std::mutex` and `std::condition_variable`.
 
 ### **Prerequisites & Knowledge**
-- Understanding of **message queue systems**
-- Implementing **thread synchronization** using `std::mutex` and `std::condition_variable`
-- Using `std::queue` for buffered messaging
+- Circular buffer data structure
+- Synchronizing access between multiple producers and consumers
+- Preventing **deadlocks** and ensuring fair resource access
+
+---
+
+## **12. Deadlock-Free Resource Allocation**
+### **Problem Statement**
+Write a simulation of resource allocation where threads avoid **deadlock** using a priority-based system.
+
+### **Prerequisites & Knowledge**
+- Understanding **deadlocks** and their causes
+- Priority-based scheduling
+- Lock acquisition ordering
+
+---
+
+## **13. Concurrent Doubly Linked List**
+### **Problem Statement**
+Implement a **thread-safe doubly linked list** with concurrent insertions and deletions.
+
+### **Prerequisites & Knowledge**
+- Basics of **doubly linked lists**
+- Using `std::mutex` for safe concurrent operations
+- Avoiding deadlocks while traversing and modifying the list
+
+---
+
+## **14. Parallel Matrix Transposition**
+### **Problem Statement**
+Perform **matrix transposition** using multiple threads for large matrices.
+
+### **Prerequisites & Knowledge**
+- Matrix operations and their memory layouts
+- Dividing work evenly across threads
+- Handling data dependencies in parallel operations
+
+---
+
+## **15. Multi-threaded Graph Coloring**
+### **Problem Statement**
+Implement a **graph coloring algorithm** that assigns colors to nodes concurrently, minimizing color conflicts.
+
+### **Prerequisites & Knowledge**
+- Basics of **graph coloring** algorithms
+- Handling node dependencies across threads
+- Synchronizing access to shared color assignments
+
+---
+
+## **16. Parallel Prefix Sum (Scan)**
+### **Problem Statement**
+Implement a **parallel prefix sum** operation on a large array using multiple threads.
+
+### **Prerequisites & Knowledge**
+- Prefix sum algorithm and applications
+- Breaking down the problem for parallel execution
+- Efficient combination of partial results
+
+---
+
+## **17. Multi-threaded Memory Pool Allocator**
+### **Problem Statement**
+Design a **thread-safe memory pool allocator** to manage dynamic memory allocations efficiently across threads.
+
+### **Prerequisites & Knowledge**
+- Basics of custom memory allocation
+- Synchronizing memory requests
+- Preventing memory leaks in a multi-threaded environment
+
+---
+
+## **18. Asynchronous Logging System**
+### **Problem Statement**
+Create an **asynchronous logging system** where multiple threads log messages to a shared file without blocking.
+
+### **Prerequisites & Knowledge**
+- Using `std::async` for asynchronous task execution
+- Thread-safe file I/O operations
+- Efficient queue management for log entries
+
+---
+
+## **19. Parallel Dijkstra’s Shortest Path Algorithm**
+### **Problem Statement**
+Implement a **parallel version of Dijkstra’s algorithm** for computing shortest paths in a graph.
+
+### **Prerequisites & Knowledge**
+- Understanding of **Dijkstra’s algorithm**
+- Managing shared data structures across threads
+- Efficient thread communication and synchronization
+
+---
+
+## **20. Thread-Safe Skip List**
+### **Problem Statement**
+Create a **concurrent skip list** that supports efficient search, insertion, and deletion in logarithmic time.
+
+### **Prerequisites & Knowledge**
+- Skip list fundamentals
+- Handling concurrent modifications
+- Efficient lock management for performance optimization
