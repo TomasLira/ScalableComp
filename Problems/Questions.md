@@ -1,11 +1,11 @@
 # **Scalable Computing: 20 Problems on Data Structures, Algorithms, and Multithreading in C++**
 
-## **1. Concurrent Linked List**
+## **1. Concurrent Queues**
 ### **Problem Statement**
-Implement a **thread-safe singly linked list** that allows concurrent insertions and deletions using `std::mutex`.
+Implement a **thread-safe Queue** that allows concurrent insertions and deletions using `std::mutex`.
 
 ### **Prerequisites & Knowledge**
-- Basics of **linked list** operations
+- Basics of **Queues** operations
 - Understanding **mutex locks** for thread safety
 - Avoiding **deadlocks** during concurrent modification
 
